@@ -57,6 +57,7 @@ pub struct Clouds {
 pub struct Wind {
     pub speed: f32,
     pub deg: f32,
+    #[serde(default)]
     pub gust: Option<f32>,
 }
 
@@ -116,7 +117,8 @@ pub struct Sys {
 #[serde(rename="type")]
     pub message_type: u32,
     pub id: u32,
-    pub message: f32,
+    #[serde(default)]
+    pub message: Option<f32>,
     pub country: String,
     pub sunrise: u64,
     pub sunset: u64, 
